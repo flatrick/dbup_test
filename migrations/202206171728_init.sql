@@ -1,0 +1,4 @@
+CREATE TABLE 'myTable' (
+    'Id' INTEGER PRIMARY KEY,
+    'Name' TEXT NOT NULL
+);

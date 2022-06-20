@@ -13,6 +13,7 @@ As I find their documentation a bit lacking, I'm hoping to be able to add to it 
 ```posh
 dotnet new console
 dotnet add package Microsoft.Data.Sqlite
+dotnet add package DbUp
 dotnet add package DbUp-sqlite
 ```
 
@@ -24,6 +25,7 @@ dotnet add package DbUp-sqlite
 ```posh
 dotnet new console
 dotnet add package Npgsql
+dotnet add package DbUp
 dotnet add package DbUp-postgresql
 ```
 

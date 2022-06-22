@@ -30,7 +30,7 @@ namespace dbup_test
                 var upgrader =
                     DbUp.DeployChanges.To
                         .SQLiteDatabase(database.SharedConnection)
-                        .WithScriptsEmbeddedInAssembly(System.Reflection.Assembly.GetExecutingAssembly())
+                        .WithScriptsEmbeddedInAssemblies(new[] { System.Reflection.Assembly.GetExecutingAssembly() })
                         .LogToConsole()
                         .Build();
 

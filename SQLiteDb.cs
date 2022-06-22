@@ -2,6 +2,7 @@ namespace dbup_test
 {
     public static class SQLiteDb
     {
+        /// <summary>WithScriptsEmbeddedInAssembly() depends on the <EmbeddedResource> in the .csproj</summary>
         public static void InMemoryDb()
         {
             using (var database = new DbUp.SQLite.Helpers.InMemorySQLiteDatabase())
@@ -23,6 +24,7 @@ namespace dbup_test
             } // The database will be removed from memory at the end of the using-clause
         }
 
+        /// <summary>WithScriptsEmbeddedInAssemblies() depends on the <EmbeddedResource> in the .csproj</summary>
         public static void TemporaryFileDb()
         {
             using (var database = new DbUp.SQLite.Helpers.TemporarySQLiteDatabase("test.db"))
@@ -53,6 +55,7 @@ namespace dbup_test
             } // The database-file is deleted at the end of the using-clause
         }
 
+        /// <summary>WithScriptsFromFileSystem() depends on <EmbeddedResource> AND the defined <Target></summary>
         public static void PermanentFileDb()
         {
             Microsoft.Data.Sqlite.SqliteConnection connection = new("Data Source=dbup.db");
@@ -62,7 +65,7 @@ namespace dbup_test
                 var upgrader = DbUp.DeployChanges
                     .To
                     .SQLiteDatabase(connection.ConnectionString)
-                    .WithScriptsEmbeddedInAssembly(System.Reflection.Assembly.GetExecutingAssembly())
+                    .WithScriptsFromFileSystem(System.AppDomain.CurrentDomain.BaseDirectory)
                     .LogToConsole()
                     .Build();
 

@@ -55,7 +55,7 @@ namespace dbup_test
             } // The database-file is deleted at the end of the using-clause
         }
 
-        /// <summary>WithScriptsFromFileSystem() depends on the <EmbeddedResource> in the .csproj</summary>
+        /// <summary>WithScriptsFromFileSystem() depends on <EmbeddedResource> AND the defined <Target></summary>
         public static void SharedConnection_WithScriptsFromFileSystem()
         {
             Microsoft.Data.Sqlite.SqliteConnection connection = new("Data Source=dbup.db");

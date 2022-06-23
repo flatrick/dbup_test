@@ -11,10 +11,6 @@
     <EmbeddedResource Include="migrations/*.sql" />
   </ItemGroup>
 
-  <Target Name="Copy files for DbUp DeployChanges WithScriptsFromFileSystem" AfterTargets="AfterBuild">
-    <Copy SourceFiles="@(EmbeddedResource)" DestinationFolder="$(OutDir)" SkipUnchangedFiles="true" />
-  </Target>
-
   <ItemGroup>
     <PackageReference Include="DbUp" Version="4.6.0" />
     <PackageReference Include="DbUp-postgresql" Version="4.6.3" />

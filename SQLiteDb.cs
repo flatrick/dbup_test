@@ -3,7 +3,7 @@ namespace dbup_test
     public static class SQLiteDb
     {
         /// <summary>WithScriptsEmbeddedInAssembly() depends on the <EmbeddedResource> in the .csproj</summary>
-        public static void InMemoryDb()
+        public static void InMemorySQLiteDatabase_WithScriptsEmbeddedInAssembly()
         {
             using (var database = new DbUp.SQLite.Helpers.InMemorySQLiteDatabase())
             {
@@ -25,7 +25,7 @@ namespace dbup_test
         }
 
         /// <summary>WithScriptsEmbeddedInAssemblies() depends on the <EmbeddedResource> in the .csproj</summary>
-        public static void TemporaryFileDb()
+        public static void TemporarySQLiteDatabase_WithScriptsEmbeddedInAssemblies()
         {
             using (var database = new DbUp.SQLite.Helpers.TemporarySQLiteDatabase("test.db"))
             {
@@ -56,7 +56,7 @@ namespace dbup_test
         }
 
         /// <summary>WithScriptsFromFileSystem() depends on <EmbeddedResource> AND the defined <Target></summary>
-        public static void PermanentFileDb()
+        public static void SharedConnection_WithScriptsFromFileSystem()
         {
             Microsoft.Data.Sqlite.SqliteConnection connection = new("Data Source=dbup.db");
 

@@ -1,3 +1,5 @@
+using System;
+
 namespace dbup_test
 {
     public static class SQLiteDb
@@ -20,7 +22,7 @@ namespace dbup_test
                 DbUp.Engine.DatabaseUpgradeResult result = upgrader.PerformUpgrade();
                 watch.Stop();
 
-                Program.Display("InMemory", result, watch.Elapsed);
+                Program.Display("SQLite - InMemory:", result, watch.Elapsed);
             } // The database will be removed from memory at the end of the using-clause
         }
 
@@ -42,7 +44,7 @@ namespace dbup_test
                 DbUp.Engine.DatabaseUpgradeResult result = upgrader.PerformUpgrade();
                 watch.Stop();
 
-                Program.Display("Temporary file", result, watch.Elapsed);
+                Program.Display("SQLite - Temporary file:", result, watch.Elapsed);
 
                 /* 
                 Because of a change with dotNet 6.0, all SQLite connections are pooled.
@@ -75,8 +77,24 @@ namespace dbup_test
                 DbUp.Engine.DatabaseUpgradeResult result = upgrader.PerformUpgrade();
                 watch.Stop();
 
-                Program.Display("Permanent file", result, watch.Elapsed);
+                Program.Display("SQLite - Permanent file - WithScriptsFromFileSystem:", result, watch.Elapsed);
             } // The file will NOT be removed after the using-clause
         }
+
+        #region ScriptTypes
+
+        /* https://github.com/DbUp/DbUp/blob/master/docs/more-info/script-types.md */
+        public static void InMemorySQLiteDatabase_ScriptType_RunAlways()
+        {
+            throw new NotImplementedException();
+        }
+
+        public static void InMemorySQLiteDatabase_ScriptType_RunOnce()
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion ScriptTypes
     }
+
 }

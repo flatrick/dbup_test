@@ -65,7 +65,7 @@ namespace dbup_test
                 var upgrader = DbUp.DeployChanges
                     .To
                     .SQLiteDatabase(connection.ConnectionString)
-                    .WithScriptsFromFileSystem(System.AppDomain.CurrentDomain.BaseDirectory)
+                    .WithScriptsFromFileSystem((System.AppDomain.CurrentDomain.BaseDirectory) + "SQLScripts")
                     .LogToConsole()
                     .Build();
 

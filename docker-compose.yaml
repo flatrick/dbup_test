@@ -14,7 +14,7 @@ services:
     volumes:
       - DbUp_Test_pgsql:/var/lib/postgresql/data
     ports:
-      - 5432:2345
+      - 2345:5432
     healthcheck:
       test:
         [

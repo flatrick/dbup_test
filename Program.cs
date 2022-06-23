@@ -6,13 +6,20 @@ namespace dbup_test
     {
         static void Main()
         {
-            SQLiteDb.InMemorySQLiteDatabase_WithScriptsEmbeddedInAssembly();
-            SQLiteDb.TemporarySQLiteDatabase_WithScriptsEmbeddedInAssemblies();
-            SQLiteDb.SharedConnection_WithScriptsFromFileSystem();
-            //PostgreSQLDb.WithScript();
+            //SQLiteDb.InMemorySQLiteDatabase_WithScriptsEmbeddedInAssembly();
+            //SQLiteDb.TemporarySQLiteDatabase_WithScriptsEmbeddedInAssemblies();
+            //SQLiteDb.SharedConnection_WithScriptsFromFileSystem();
+
+            //SQLiteDb.InMemorySQLiteDatabase_ScriptType_RunAlways();
+            //SQLiteDb.InMemorySQLiteDatabase_ScriptType_RunOnce();
+
+            PostgreSQLDb.WithScript();
             //PostgreSQLDb.WithScripts();
             //PostgreSQLDb.WithScriptsCustomScriptProvider();
             //PostgreSQLDb.WithScriptsAndCodeEmbeddedInAssembly();
+            //PostgreSQLDb.WithScripts_WithoutTransaction();
+            //PostgreSQLDb.WithScripts_WithTransactionPerScript();
+            //PostgreSQLDb.WithScripts_WithTransaction();
         }
 
         public static void Display(string dbType, DbUp.Engine.DatabaseUpgradeResult result, TimeSpan ts)

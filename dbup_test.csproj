@@ -8,7 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="migrations/*.sql" />
+    <EmbeddedResource Include="migrations/*.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
 
   <Target Name="Copy files for DbUp DeployChanges WithScriptsFromFileSystem" AfterTargets="AfterBuild">
@@ -16,11 +18,10 @@
   </Target>
 
   <ItemGroup>
-    <PackageReference Include="DbUp" Version="4.6.0" />
     <PackageReference Include="DbUp-postgresql" Version="4.6.3" />
     <PackageReference Include="DbUp-sqlite" Version="4.6.0" />
     <PackageReference Include="Microsoft.Data.Sqlite" Version="6.0.6" />
-    <PackageReference Include="Npgsql" Version="6.0.4" />
+    <PackageReference Include="Npgsql" Version="6.0.5" />
   </ItemGroup>
 
 </Project>

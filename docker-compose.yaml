@@ -1,0 +1,42 @@
+version: "3.9"
+
+services:
+  db:
+    image: "postgres:latest"
+    restart: always
+    shm_size: 256M
+    environment:
+      GitLabCI: "false"
+      POSTGRES_USER: "${postgresUser}"
+      POSTGRES_PASSWORD: "${postgresPassword}"
+      POSTGRES_DB: "${postgresDB}"
+      POSTGRES_HOST_AUTH_METHOD: trust
+    volumes:
+      - DbUp_Test_pgsql:/var/lib/postgresql/data
+    ports:
+      - 5432:2345
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "pg_isready",
+          "-q",
+          "-d",
+          "${postgresDB}",
+          "-U",
+          "${postgresUser}"
+        ]
+      timeout: 45s
+      interval: 10s
+      retries: 10
+
+  adminer:
+    image: "adminer:latest"
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - 8080:8080
+
+volumes:
+  DbUp_Test_pgsql:

@@ -1,0 +1,21 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 2345,
+            "driver": "PostgreSQL",
+            "name": "dbup_test_pgsql",
+            "database": "mydb",
+            "username": "myuser",
+            "password": "mypassword"
+        },
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "dbup_test_sqlite",
+            "database": "C:/source/github/flatrick/dbup_test/bin/Debug/net6.0/dbup.db"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}

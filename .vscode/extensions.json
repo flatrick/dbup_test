@@ -1,0 +1,6 @@
+{
+    "recommendations": [
+        "mtxr.sqltools-driver-pg",
+        "mtxr.sqltools"
+    ]
+}

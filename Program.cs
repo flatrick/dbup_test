@@ -6,14 +6,14 @@ namespace dbup_test
     {
         static void Main()
         {
-            //SQLiteDb.InMemorySQLiteDatabase_WithScriptsEmbeddedInAssembly();
-            //SQLiteDb.TemporarySQLiteDatabase_WithScriptsEmbeddedInAssemblies();
-            //SQLiteDb.SharedConnection_WithScriptsFromFileSystem();
+            SQLiteDb.InMemorySQLiteDatabase_WithScriptsEmbeddedInAssembly();
+            SQLiteDb.TemporarySQLiteDatabase_WithScriptsEmbeddedInAssemblies();
+            SQLiteDb.SharedConnection_WithScriptsFromFileSystem();
 
-            //SQLiteDb.InMemorySQLiteDatabase_ScriptType_RunAlways();
+            SQLiteDb.SharedConnection_ScriptType_RunAlways();
             //SQLiteDb.InMemorySQLiteDatabase_ScriptType_RunOnce();
 
-            PostgreSQLDb.WithScript();
+            //PostgreSQLDb.WithScript();
             //PostgreSQLDb.WithScripts();
             //PostgreSQLDb.WithScriptsCustomScriptProvider();
             //PostgreSQLDb.WithScriptsAndCodeEmbeddedInAssembly();

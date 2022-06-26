@@ -9,7 +9,7 @@ namespace dbup_test
         {
             using (var database = new DbUp.SQLite.Helpers.InMemorySQLiteDatabase())
             {
-                var upgrader =
+                DbUp.Engine.UpgradeEngine upgrader =
                     DbUp.DeployChanges.To
                         .SQLiteDatabase(database.ConnectionString)
                         .WithScriptsEmbeddedInAssembly(System.Reflection.Assembly.GetExecutingAssembly())
@@ -31,7 +31,7 @@ namespace dbup_test
         {
             using (var database = new DbUp.SQLite.Helpers.TemporarySQLiteDatabase("test.db"))
             {
-                var upgrader =
+                DbUp.Engine.UpgradeEngine upgrader =
                     DbUp.DeployChanges.To
                         .SQLiteDatabase(database.SharedConnection)
                         .WithScriptsEmbeddedInAssemblies(new[] { System.Reflection.Assembly.GetExecutingAssembly() })
@@ -64,7 +64,7 @@ namespace dbup_test
 
             using (var database = new DbUp.SQLite.Helpers.SharedConnection(connection))
             {
-                var upgrader = DbUp.DeployChanges
+                DbUp.Engine.UpgradeEngine upgrader = DbUp.DeployChanges
                     .To
                     .SQLiteDatabase(connection.ConnectionString)
                     .WithScriptsFromFileSystem((System.AppDomain.CurrentDomain.BaseDirectory) + "/migrations/")
@@ -84,14 +84,56 @@ namespace dbup_test
         #region ScriptTypes
 
         /* https://github.com/DbUp/DbUp/blob/master/docs/more-info/script-types.md */
-        public static void InMemorySQLiteDatabase_ScriptType_RunAlways()
+        public static void SharedConnection_ScriptType_RunAlways()
         {
-            throw new NotImplementedException();
+            Microsoft.Data.Sqlite.SqliteConnection connection = new("Data Source=dbup.db");
+
+            using (var database = new DbUp.SQLite.Helpers.SharedConnection(connection))
+            {
+                var upgrader =
+                    DbUp.DeployChanges.To
+                        .SQLiteDatabase(database.ConnectionString)
+                        .WithScriptsEmbeddedInAssembly(
+                            System.Reflection.Assembly.GetExecutingAssembly(),
+                            script => script.EndsWith("RunAlways.sql"),
+                            new DbUp.Engine.SqlScriptOptions { ScriptType = DbUp.Support.ScriptType.RunAlways })
+                        .LogToConsole()
+                        .Build();
+
+                var watch = new System.Diagnostics.Stopwatch();
+
+                watch.Start();
+                DbUp.Engine.DatabaseUpgradeResult result = upgrader.PerformUpgrade();
+                watch.Stop();
+
+                Program.Display("SQLite - Permanent file - ScriptType - RunAlways:", result, watch.Elapsed);
+            }
         }
 
         public static void InMemorySQLiteDatabase_ScriptType_RunOnce()
         {
-            throw new NotImplementedException();
+            /* ScriptType_RunOnce hasn't been implemented here yet */
+
+            using (var database = new DbUp.SQLite.Helpers.InMemorySQLiteDatabase())
+            {
+                var upgrader =
+                    DbUp.DeployChanges.To
+                        .SQLiteDatabase(database.ConnectionString)
+                        .WithScriptsEmbeddedInAssembly(
+                            System.Reflection.Assembly.GetExecutingAssembly(),
+                            script => script.EndsWith("RunAlways.sql"),
+                            new DbUp.Engine.SqlScriptOptions { ScriptType = DbUp.Support.ScriptType.RunAlways })
+                        .LogToConsole()
+                        .Build();
+
+                var watch = new System.Diagnostics.Stopwatch();
+
+                watch.Start();
+                DbUp.Engine.DatabaseUpgradeResult result = upgrader.PerformUpgrade();
+                watch.Stop();
+
+                Program.Display("SQLite - InMemory - ScriptType - RunOnce:", result, watch.Elapsed);
+            }
         }
 
         #endregion ScriptTypes

@@ -6,15 +6,20 @@ namespace dbup_test
     {
         public static void WithScript()
         {
-            string connectionString = "Host=localhost; Port=2345; Database=mydb; Username=myuser; Password=mypassword;";
+            const string connectionString = "Host=localhost; Port=2345; Database=mydbc; Username=myuser; Password=mypassword;";
 
+            // Verify that the database exists, if not, create it
+            DbUp.EnsureDatabase.For.PostgresqlDatabase(connectionString);
+
+            /* DropDatabase isn't implemented for PostgreSQL in DbUp */
+            // DbUp.DropDatabase.For.
+
+            // Configure DbUp.Engine.UpgradeEngine
             var upgrader = DbUp.DeployChanges.To
                 .PostgresqlDatabase(connectionString)
                 .WithScript("possy_table_init.sql", "CREATE TABLE possy_table (Id INTEGER PRIMARY KEY, Name TEXT NOT NULL);")
                 .LogToConsole()
                 .Build();
-
-            //DbUp.EnsureDatabase.For.PostgresqlDatabase(connectionString);
 
             var watch = new System.Diagnostics.Stopwatch();
 

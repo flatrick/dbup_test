@@ -1,0 +1,5 @@
+site_name: DbUp Test Docs
+repo_url: https://github.com/flatrick/dbup_test
+nav:
+  - "index.md"
+  - "script_sources.md"

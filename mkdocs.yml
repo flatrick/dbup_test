@@ -2,6 +2,7 @@ site_name: DbUp Test Docs
 repo_url: https://github.com/flatrick/dbup_test
 nav:
   - "Home": "index.md"
+  - "Setup": "setup.md"
   - "SQL Scripts":
       - "Sources": "script_sources.md"
       - "Settings": "script_settings.md"

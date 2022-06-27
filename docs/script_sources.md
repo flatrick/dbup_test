@@ -67,8 +67,8 @@ WithScriptsAndCodeEmbeddedInAssembly(Assembly assembly);
 ```
 
 1. If `codeScriptFilter` isn't supplied for `WithScriptsAndCodeEmbeddedInAssembly()`
-   1. `filter` will be used to filter all scripts (i.e. both code and the embedded files from the assembly)
-   2. But `filter` is mandatory if any filtering is to be used as there is no method-signature for only `codeScriptFilter`
+    1. `filter` will be used to filter all scripts (i.e. both code and the embedded files from the assembly)
+    2. But `filter` is mandatory if any filtering is to be used as there is no method-signature for only `codeScriptFilter`
 2. 
 
 ## Multiple scripts from specified file path

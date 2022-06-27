@@ -1,6 +1,6 @@
-# First setup of DbUp
+# First introduction to DbUp
 
-First, let's begin by creating a new console application and adding DbUp to the project:
+Before going into details on the various options available, let's begin by creating a simple console application and get you aqainted with DbUp:
 
 ```posh
 dotnet new console
@@ -101,4 +101,60 @@ CREATE TABLE 'EmployeeRoles' (
 ```
 
 Whenever you build and run this application, these two scripts will now be executed on the in-memory database.
-In production you will most likely not be using temporary in-memory databases, but the basics for how this works should now be clear.
+
+### Example with a permanent database
+
+Since the first example made use of an In-memory database that gets re-created on every run, now you'll see how to do it with a permanent database.
+
+The biggest change will be that if you re-run this application multiple times, it will only execute the SQL-scripts the first time.
+
+Unless you tell it to behave differently, DbUp will first look to see if there is a table containing a list of previously executed upgrades to determine which scripts haven't been run yet.
+If such a table is found and the list of already run upgrades matches the list of scripts found by DbUp, no scripts will need to be executed again.
+
+This example makes use of a PostgreSQL database so the needed packages are:
+
+```posh
+dotnet add package Npgsql
+dotnet add package DbUp-postgresql
+```
+
+And here is the code:
+
+```csharp
+using System;
+
+namespace dbup_example
+{
+    public static class Program
+    {
+        static void Main()
+        {
+            const string connectionString = "Host=localhost; Port=5432; Database=mydb; Username=myuser; Password=mypassword;";
+            // 1. configure DbUp to deploy to our PostgreSQL database
+            // 2. using scripts embedded in this assembly
+            // 3. log all events to the console screen
+            // 4. build the UpgradeEngine-object needed
+            DbUp.Engine.UpgradeEngine upgrader = 
+                DbUp.DeployChanges.To
+                    .PostgresqlDatabase(connectionString)
+                    .WithScriptsEmbeddedInAssembly(System.Reflection.Assembly.GetExecutingAssembly())
+                    .LogToConsole()
+                    .Build();
+            // Here we perform the actual upgrade using our UpgradeEngine-object and store the result in a variable
+            DbUp.Engine.DatabaseUpgradeResult result = upgrader.PerformUpgrade();
+            if (result.Successful)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("The upgrade was successful!");
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(result.Error);
+                Console.WriteLine("Failed!");
+            }
+            Console.ReadKey();
+        }
+    }
+}
+```

@@ -1,4 +1,5 @@
 site_name: DbUp Test Docs
+theme: readthedocs
 repo_url: https://github.com/flatrick/dbup_test
 nav:
   - "Home": "index.md"

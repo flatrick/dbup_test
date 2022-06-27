@@ -1,6 +1,6 @@
 # First introduction to DbUp
 
-Before going into details on the various options available, let's begin by creating a simple console application and get you aqainted with DbUp:
+Before going into details on the various options available, let's begin by creating a simple console application and get you aquainted with DbUp:
 
 ```posh
 dotnet new console
@@ -14,7 +14,7 @@ dotnet add package DbUp-sqlite
 
 For this first example, we will store our SQL-scripts in a sub-folder named `migrations` that will be copied to the output-folder when we compile, so go ahead and create a folder with that name in your new project-folder.
 
-## MSBuild options (csproj)
+## MSBuild options (csproj) to copy the SQL-scripts
 
 To make sure whatever we put in the folder `migrations` gets copied during compilation, you need to edit your `<project>.csproj` file.
 Add the following somewhere between the `<Project>...</Project>` tags:
@@ -82,6 +82,8 @@ By default, DbUp will begin by collecting a list of all scripts to execute, and 
 In other words, the filenames of your scripts will dictate which order they are executed in.
 For this example, we'll use a date and time-string to sort them in the desired order of oldest to newest.
 
+## SQL scripts
+
 Create two files named `202206262000` and `202206262100` in the folder `migrations`:
 
 ```sql
@@ -102,7 +104,7 @@ CREATE TABLE 'EmployeeRoles' (
 
 Whenever you build and run this application, these two scripts will now be executed on the in-memory database.
 
-### Example with a permanent database
+## Example with a permanent database
 
 Since the first example made use of an In-memory database that gets re-created on every run, now you'll see how to do it with a permanent database.
 

@@ -41,4 +41,4 @@ Add the following between `<Project>...</Project>`
 </ItemGroup>
 ```
 
-You can also add each as a separate `<EmbeddedResource>` row if that is preferred over a wildcard like the example above.
+You can also add each script as separate `<EmbeddedResource>` rows if that is preferred over a wildcard like the example above.

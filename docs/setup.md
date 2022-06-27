@@ -25,7 +25,7 @@ Add the following somewhere between the `<Project>...</Project>` tags:
 </ItemGroup>
 ```
 
-*Note: you can also add a single line for every file you wish to have copied inside this `<ItemGroup>` as separate `<EmbeddedResource>` rows instead of using a wildcard like I do in my example above. As this is an example, I will try to keep things as easy as possible.*
+*Note: you can also add a single line for every file you wish to have copied inside this `<ItemGroup>` as separate `<EmbeddedResource>` rows instead of using a wildcard like I do in my example above. As this is an example, I chose to try and keep things as easy as possible.*
 
 ## Source code
 
@@ -56,27 +56,20 @@ namespace dbup_example
                 // Here we perform the actual upgrade using our UpgradeEngine-object and store the result in a variable
                 DbUp.Engine.DatabaseUpgradeResult result = upgrader.PerformUpgrade();
 
-                Program.Display("SQLite - InMemory:", result);
-            } // The database will be removed from memory at the end of this using-clause
-        }
+                if (result.Successful)
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("The upgrade was successful!");
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine(result.Error);
+                    Console.WriteLine("Failed!");
+                }
 
-        public static void Display(string dbType, DbUp.Engine.DatabaseUpgradeResult result)
-        {
-            // Display the result
-            if (result.Successful)
-            {
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("Success!");
-                Console.WriteLine("{0} Database Upgrade", dbType);
                 Console.ReadKey();
-            }
-            else
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine(result.Error);
-                Console.ReadKey();
-                Console.WriteLine("Failed!");
-            }
+            } // The database will be removed from memory at the end of this using-clause
         }
     }
 }
@@ -84,7 +77,7 @@ namespace dbup_example
 
 And now that we have done the preliminary work of setting everything up, we can start adding SQL-scripts to the `migrations` folder.
 
-By default, DbUp will begin by collecting a list of all scripts to execute and sort them using [StringComparer.Ordinal](https://docs.microsoft.com/en-us/dotnet/api/system.stringcomparer.ordinal?view=net-6.0) before executing them.
+By default, DbUp will begin by collecting a list of all scripts to execute, and then sort them using [StringComparer.Ordinal](https://docs.microsoft.com/en-us/dotnet/api/system.stringcomparer.ordinal?view=net-6.0) before executing them.
 In other words, the filenames of your scripts will dictate which order they are executed in.
 For this example, we'll use a date and time-string to sort them in the desired order of oldest to newest.
 

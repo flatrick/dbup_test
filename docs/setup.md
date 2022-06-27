@@ -47,11 +47,12 @@ namespace dbup_example
                 // 2. using scripts embedded in this assembly
                 // 3. log all events to the console screen
                 // 4. build the UpgradeEngine-object needed
-                DbUp.Engine.UpgradeEngine upgrader = DbUp.DeployChanges.To
-                                                 .SQLiteDatabase(database.ConnectionString)
-                                                 .WithScriptsEmbeddedInAssembly(System.Reflection.Assembly.GetExecutingAssembly())
-                                                 .LogToConsole()
-                                                 .Build();
+                DbUp.Engine.UpgradeEngine upgrader = 
+                    DbUp.DeployChanges.To
+                        .SQLiteDatabase(database.ConnectionString)
+                        .WithScriptsEmbeddedInAssembly(System.Reflection.Assembly.GetExecutingAssembly())
+                        .LogToConsole()
+                        .Build();
 
                 // Here we perform the actual upgrade using our UpgradeEngine-object and store the result in a variable
                 DbUp.Engine.DatabaseUpgradeResult result = upgrader.PerformUpgrade();

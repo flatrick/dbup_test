@@ -16,7 +16,7 @@ These scripts can be provided through a few different means:
 2. As an embedded source inside multiple assemblies
 3. From a defined path
 4. From the source-code
-   1. Which means you can create dynamically typed scripts based on other inputs using C#
+    1. Which means you can create dynamically typed scripts based on other inputs using C#
 
 Each option has its pro's and con's, but atleast one of them should provide you with what you need.
 And you can also mix and match between the various options for the same product if needed.

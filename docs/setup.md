@@ -16,7 +16,7 @@ For this first example, we will store our SQL-scripts in a sub-folder named `mig
 
 ## MSBuild options (csproj)
 
-Open your `<project>.csproj` file and make sure whatever we put in this folder gets copied during compilation.
+To make sure whatever we put in the folder `migrations` gets copied during compilation, you need to edit your `<project>.csproj` file.
 Add the following somewhere between the `<Project>...</Project>` tags:
 
 ```xml

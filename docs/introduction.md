@@ -106,7 +106,7 @@ Whenever you build and run this application, these two scripts will now be execu
 
 ## Example with a permanent database
 
-Since the first example made use of an In-memory database that gets re-created on every run, now you'll see how to do it with a permanent database.
+Since the first example made use of an In-memory database that gets re-created on every run, I'll now show how to do it with a permanent database.
 
 The biggest change will be that if you re-run this application multiple times, it will only execute the SQL-scripts the first time.
 
@@ -120,7 +120,7 @@ dotnet add package Npgsql
 dotnet add package DbUp-postgresql
 ```
 
-And here is the code:
+And below is the code. As you'll notice, there is no helper-method used here to setup the connection and no need for an using-statement.
 
 ```csharp
 using System;
@@ -142,8 +142,10 @@ namespace dbup_example
                     .WithScriptsEmbeddedInAssembly(System.Reflection.Assembly.GetExecutingAssembly())
                     .LogToConsole()
                     .Build();
+
             // Here we perform the actual upgrade using our UpgradeEngine-object and store the result in a variable
             DbUp.Engine.DatabaseUpgradeResult result = upgrader.PerformUpgrade();
+
             if (result.Successful)
             {
                 Console.ForegroundColor = ConsoleColor.Green;

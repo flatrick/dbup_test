@@ -1,14 +1,4 @@
-# Script sources
-
-- [Encoding - Which encoding the files are read with](https://github.com/DbUp/DbUp/blob/master/src/dbup-core/DbUpDefaults.cs)
-- [filter / codeScriptFilter - Filter whichs scripts to be executed (when used, also remember to filter out non-.sql files)](https://github.com/DbUp/DbUp/blob/master/src/dbup-core/Builder/StandardExtensions.cs)
-- [IScript - A class which represents a script, allowing you to dynamically generate a sql script at runtime](https://github.com/DbUp/DbUp/blob/master/src/dbup-core/Engine/IScript.cs)
-- [IScriptProvider - Provides scripts to be executed](https://github.com/DbUp/DbUp/blob/master/src/dbup-core/Engine/IScriptProvider.cs)
-- [SqlScript - Represents a script that comes from some source, e.g. an embedded resource in an assembly](https://github.com/DbUp/DbUp/blob/master/src/dbup-core/Engine/SqlScript.cs)
-- [SqlScriptOptions - allow you to set various options for the SQL Script Model and any child models](https://github.com/DbUp/DbUp/blob/master/src/dbup-core/Engine/SqlScriptOptions.cs)
-
-- [FileSystemScriptProvider - Alternate IScriptProvider implementation which retrieves upgrade scripts via a directory](https://github.com/DbUp/DbUp/blob/master/src/dbup-core/ScriptProviders/FileSystemScriptProvider.cs)
-- [FileSystemScriptOptions - Options for FileSystemScriptProvider](https://github.com/DbUp/DbUp/blob/master/src/dbup-core/ScriptProviders/FileSystemScriptOptions.cs)
+# Sources for SQL scripts
 
 ## Single script through code
 
@@ -69,7 +59,6 @@ WithScriptsAndCodeEmbeddedInAssembly(Assembly assembly);
 1. If `codeScriptFilter` isn't supplied for `WithScriptsAndCodeEmbeddedInAssembly()`
     1. `filter` will be used to filter all scripts (i.e. both code and the embedded files from the assembly)
     2. But `filter` is mandatory if any filtering is to be used as there is no method-signature for only `codeScriptFilter`
-2. 
 
 ## Multiple scripts from specified file path
 
@@ -85,3 +74,14 @@ WithScriptsFromFileSystem(string path, Func<string, bool> filter, Encoding encod
 WithScriptsFromFileSystem(string path, FileSystemScriptOptions options);
 WithScriptsFromFileSystem(string path, FileSystemScriptOptions options, SqlScriptOptions sqlScriptOptions);
 ```
+
+## Information about various parameters
+
+- [Encoding - Which encoding the files are read with](https://github.com/DbUp/DbUp/blob/master/src/dbup-core/DbUpDefaults.cs)
+- [filter / codeScriptFilter - Filter whichs scripts to be executed (when used, also remember to filter out non-.sql files)](https://github.com/DbUp/DbUp/blob/master/src/dbup-core/Builder/StandardExtensions.cs)
+- [IScript - A class which represents a script, allowing you to dynamically generate a sql script at runtime](https://github.com/DbUp/DbUp/blob/master/src/dbup-core/Engine/IScript.cs)
+- [IScriptProvider - Provides scripts to be executed](https://github.com/DbUp/DbUp/blob/master/src/dbup-core/Engine/IScriptProvider.cs)
+- [SqlScript - Represents a script that comes from some source, e.g. an embedded resource in an assembly](https://github.com/DbUp/DbUp/blob/master/src/dbup-core/Engine/SqlScript.cs)
+- [SqlScriptOptions - allow you to set various options for the SQL Script Model and any child models](https://github.com/DbUp/DbUp/blob/master/src/dbup-core/Engine/SqlScriptOptions.cs)
+- [FileSystemScriptProvider - Alternate IScriptProvider implementation which retrieves upgrade scripts via a directory](https://github.com/DbUp/DbUp/blob/master/src/dbup-core/ScriptProviders/FileSystemScriptProvider.cs)
+- [FileSystemScriptOptions - Options for FileSystemScriptProvider](https://github.com/DbUp/DbUp/blob/master/src/dbup-core/ScriptProviders/FileSystemScriptOptions.cs)

@@ -3,6 +3,20 @@
 This is my attempt to describe how to use DbUp in a more thorough manner than the current official docs do.
 The [official docs](https://dbup.readthedocs.io/) have a few issues for a new user and the docs seems to have fallen out of date.
 
+## Guidelines
+
+- [The Grand Unified Theory of Documenation - David Laing](https://documentation.divio.com/)
+
+![](https://documentation.divio.com/_images/overview.png)
+
+|             | Tutorials                          | How-to guides                        | Reference                         | Explanation                           |
+| ----------- | ---------------------------------- | ------------------------------------ | --------------------------------- | ------------------------------------- |
+| oriented to | learning                           | a goal                               | information                       | understanding                         |
+| must        | allow the newcomer to get started  | show how to solve a specific problem | describe the machinery            | explain                               |
+| its form    | a lesson                           | a series of steps                    | dry description                   | discursive explanation                |
+| analogy     | teaching a small child how to cook | a recipe in a cookery book           | a reference encyclopaedia article | an article on culinary social history |
+
+
 ## What is DbUp?
 
 DbUp is a tool for deploying database changes, it started its life supporting only Microsoft SQL Server, but has over time recieved support for other popular alternatives.

@@ -1,4 +1,5 @@
-# New console application with DbUp
+# Tutorials
+## New console application with DbUp
 
 Before going into details on the various options available, let's begin by creating a simple console application and get you aquainted with DbUp:
 
@@ -10,11 +11,11 @@ dotnet add package DbUp-sqlite
 
 *Note: I chose to use SQLite in this example as it is the easiest to get started with.*
 
-## Folder for storing SQL scripts
+### Folder for storing SQL scripts
 
 We will store our SQL-scripts in a sub-folder named `migrations` that will be copied to the output-folder when we compile, so go ahead and create a folder with that name in your new project-folder.
 
-## MSBuild options (csproj) to copy the SQL-scripts
+### MSBuild options (csproj) to copy the SQL-scripts
 
 To make sure whatever we put in the folder `migrations` gets copied during compilation, you need to edit your `<project>.csproj` file.
 Add the following somewhere between the `<Project>...</Project>` tags:
@@ -27,7 +28,7 @@ Add the following somewhere between the `<Project>...</Project>` tags:
 
 *Note: you can also add a single line for every file you wish to have copied inside this `<ItemGroup>` as separate `<EmbeddedResource>` rows instead of using a wildcard like I do in my example above. As this is an example, I elected to try and keep things as easy as possible.*
 
-## Source code
+### Source code
 
 *Note: As we're using SQLite, DbUp comes with Helpers to assist with certain unique features of SQLite versus other RDBMS systems.*
 *For the sake of this example, we'll be using an In-Memory database that won't store any data on disk when the application exits.*
@@ -82,7 +83,7 @@ By default, DbUp will begin by collecting a list of all scripts to execute, and 
 In other words, the filenames of your scripts will dictate which order they are executed in.
 For this example, we'll use a date and time-string to sort them in the desired order of oldest to newest.
 
-## SQL scripts
+### SQL scripts
 
 Create two files named `202206262000` and `202206262100` in the folder `migrations`:
 

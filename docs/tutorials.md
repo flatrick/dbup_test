@@ -1,4 +1,4 @@
-# First introduction to DbUp
+# New console application with DbUp
 
 Before going into details on the various options available, let's begin by creating a simple console application and get you aquainted with DbUp:
 
@@ -12,7 +12,7 @@ dotnet add package DbUp-sqlite
 
 ## Folder for storing SQL scripts
 
-For this first example, we will store our SQL-scripts in a sub-folder named `migrations` that will be copied to the output-folder when we compile, so go ahead and create a folder with that name in your new project-folder.
+We will store our SQL-scripts in a sub-folder named `migrations` that will be copied to the output-folder when we compile, so go ahead and create a folder with that name in your new project-folder.
 
 ## MSBuild options (csproj) to copy the SQL-scripts
 
@@ -25,7 +25,7 @@ Add the following somewhere between the `<Project>...</Project>` tags:
 </ItemGroup>
 ```
 
-*Note: you can also add a single line for every file you wish to have copied inside this `<ItemGroup>` as separate `<EmbeddedResource>` rows instead of using a wildcard like I do in my example above. As this is an example, I chose to try and keep things as easy as possible.*
+*Note: you can also add a single line for every file you wish to have copied inside this `<ItemGroup>` as separate `<EmbeddedResource>` rows instead of using a wildcard like I do in my example above. As this is an example, I elected to try and keep things as easy as possible.*
 
 ## Source code
 
@@ -106,7 +106,7 @@ Whenever you build and run this application, these two scripts will now be execu
 
 ## Example with a permanent database
 
-Since the first example made use of an In-memory database that gets re-created on every run, I'll now show how to do it with a permanent database.
+Since the first example made use of an In-memory database that gets re-created on every run, let's use a permanent database now.
 
 The biggest change will be that if you re-run this application multiple times, it will only execute the SQL-scripts the first time.
 

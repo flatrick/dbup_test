@@ -3,18 +3,18 @@
 This is my attempt to describe how to use DbUp in a more thorough manner than the current official docs do.
 The [official docs](https://dbup.readthedocs.io/) have a few issues for a new user and the docs seems to have fallen out of date.
 
-## Guidelines
+## Guidelines for the documentation
 
 - [The Grand Unified Theory of Documenation - David Laing](https://documentation.divio.com/)
 
 ![](https://documentation.divio.com/_images/overview.png)
 
-|             | Tutorials                          | How-to guides                        | Reference                         | Explanation                           |
-| ----------- | ---------------------------------- | ------------------------------------ | --------------------------------- | ------------------------------------- |
-| oriented to | learning                           | a goal                               | information                       | understanding                         |
-| must        | allow the newcomer to get started  | show how to solve a specific problem | describe the machinery            | explain                               |
-| its form    | a lesson                           | a series of steps                    | dry description                   | discursive explanation                |
-| analogy     | teaching a small child how to cook | a recipe in a cookery book           | a reference encyclopaedia article | an article on culinary social history |
+|               | [Tutorials](tutorials.md)          | [How-to guides](how-to_guides.md)    | [Reference](reference.md)         | [Explanation](explanation.md)         |
+| ------------- | ---------------------------------- | ------------------------------------ | --------------------------------- | ------------------------------------- |
+| *oriented to* | Learning                           | A goal                               | Information                       | Understanding                         |
+| *must*        | Allow the newcomer to get started  | Show how to solve a specific problem | Describe the machinery            | Explain                               |
+| *its form*    | A lesson                           | A series of steps                    | Dry description                   | Discursive explanation                |
+| *analogy*     | Teaching a small child how to cook | A recipe in a cookery book           | A reference encyclopaedia article | An article on culinary social history |
 
 
 ## What is DbUp?

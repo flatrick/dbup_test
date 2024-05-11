@@ -7,7 +7,7 @@ nav:
   - "How-to Guides": "how-to_guides.md"
   - "Reference": "reference.md"
   - "Explanation": "explanation.md"
+  - "Settings": "settings.md"  
   - "SQL Scripts":
       - "Sources": "script_sources.md"
       - "Settings": "script_settings.md"
-  - "Settings": "settings.md"

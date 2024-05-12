@@ -62,3 +62,13 @@ These two files are meant to be changed according to each user's desire/needs, s
 git update-index --skip-worktree appsettings.json
 git update-index --skip-worktree .env
 ```
+
+## Steps for updating the mkdocs installation
+
+```powershell
+python -m venv docs
+cd docs
+.\Scripts\Activate.ps1
+python -m pip install pip-tools mkdocs mkdocstrings[python] markdown-include
+pip-compile requirements.in
+```

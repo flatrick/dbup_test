@@ -464,3 +464,10 @@ $RECYCLE.BIN/
 ## 
 
 .env
+
+##
+## The instance of the application's unique settings
+## Leaving a copy of the most basic one that matches the settings in .env
+##
+
+appsettings.json

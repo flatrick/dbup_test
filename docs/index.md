@@ -38,8 +38,7 @@ And you can also mix and match between the various options for the same product 
 
 ## Next step
 
-- [Introduction to DbUp](introduction.md)
 - [Tutorials](tutorials.md)
-- [How-To](how-to.md)
+- [How-To](how-to-guides.md)
 - [Explanations](explanations.md)
 - [Reference](reference.md)

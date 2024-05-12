@@ -1,11 +1,15 @@
 # Tutorials
-## New console application with DbUp
+
+[Tutorials - Divio](https://docs.divio.com/documentation-system/tutorials/)
+
+## New console application with DbUp and SQLite
 
 Before going into details on the various options available, let's begin by creating a simple console application and get you aquainted with DbUp:
 
 ```posh
 dotnet new console
 dotnet add package Microsoft.Data.Sqlite
+dotnet add package DbUp-Core
 dotnet add package DbUp-sqlite
 ```
 
@@ -85,7 +89,7 @@ For this example, we'll use a date and time-string to sort them in the desired o
 
 ### SQL scripts
 
-Create two files named `202206262000` and `202206262100` in the folder `migrations`:
+Create two files named `202206262000.sql` and `202206262100.sql` in the folder `migrations`:
 
 ```sql
 --202206262000
@@ -105,19 +109,21 @@ CREATE TABLE 'EmployeeRoles' (
 
 Whenever you build and run this application, these two scripts will now be executed on the in-memory database.
 
-## Example with a permanent database
+## New console application with DbUp and PostgreSQL
 
-Since the first example made use of an In-memory database that gets re-created on every run, let's use a permanent database now.
+Since the first example made use of an *In-memory database* that gets re-created on every run, we will use a *permanent database* now.
 
 The biggest change will be that if you re-run this application multiple times, it will only execute the SQL-scripts the first time.
 
-Unless you tell it to behave differently, DbUp will first look to see if there is a table containing a list of previously executed upgrades to determine which scripts haven't been run yet.
+Unless you tell it to behave differently, **DbUp** will first look to see if there is a table containing a list of previously executed upgrades to determine which scripts haven't been run yet.
 If such a table is found and the list of already run upgrades matches the list of scripts found by DbUp, no scripts will need to be executed again.
 
-This example makes use of a PostgreSQL database so the needed packages are:
+This example makes use of a **PostgreSQL** database, so the commands to run are:
 
 ```posh
+dotnet new console
 dotnet add package Npgsql
+dotnet add package DbUp-Core
 dotnet add package DbUp-postgresql
 ```
 

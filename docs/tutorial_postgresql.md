@@ -73,3 +73,25 @@ namespace dbup_example
     }
 }
 ```
+
+## Step 5: SQL scripts
+
+Create two files named `202206262000.sql` and `202206262100.sql` in the folder `migrations`:
+
+```sql
+--202206262000
+CREATE TABLE 'Employees' (
+    'Id' INTEGER PRIMARY KEY,
+    'EmployeeName' TEXT NOT NULL
+);
+```
+
+```sql
+--202206262100
+CREATE TABLE 'EmployeeRoles' (
+    'Id' INTEGER PRIMARY KEY,
+    'EmployeeRoleName' TEXT NOT NULL
+);
+```
+
+Whenever you build and run this application, these two scripts will now be executed on the PostgreSQL-database.

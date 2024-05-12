@@ -65,6 +65,12 @@ git update-index --skip-worktree .env
 
 ## Steps for updating the mkdocs installation
 
+These steps are written based on:
+- The user is running on Windows
+- The user has installed Python 3.x
+- The user has not created a virtual environment (venv) yet
+- The three dependencies are defined in the file `requirements.in` (without a version to make it install the latest version)
+
 ```powershell
 python -m venv docs
 cd docs

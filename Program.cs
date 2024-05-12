@@ -64,7 +64,6 @@ public class Program
     {
         IConfigurationRoot config = new ConfigurationBuilder()
         .AddJsonFile("appsettings.json")
-        .AddEnvironmentVariables()
         .Build();
 
         return config.GetConnectionString("postgres")!;

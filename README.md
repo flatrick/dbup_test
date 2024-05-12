@@ -13,6 +13,7 @@ As I find their documentation a bit lacking, I'm hoping to be able to add to it 
 ```posh
 dotnet new console
 dotnet add package Microsoft.Data.Sqlite
+dotnet add package DbUp-core
 dotnet add package DbUp-sqlite
 ```
 
@@ -24,7 +25,17 @@ dotnet add package DbUp-sqlite
 ```posh
 dotnet new console
 dotnet add package Npgsql
+dotnet add package DbUp-core
 dotnet add package DbUp-postgresql
+```
+
+## Use a json-file to store the connection-string for PostgreSQL
+
+Configuration shouldn't be stored in the source-code, so to not spread bad behaviours, this sample-project uses `Microsoft.Extensions.Configuration` to read from a JSON-file.
+
+```posh
+dotnet add package Microsoft.Extensions.Configuration
+dotnet add package Microsoft.Extensions.Configuration.Json
 ```
 
 ## Ways of storing and executing migrations

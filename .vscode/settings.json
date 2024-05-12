@@ -14,7 +14,7 @@
             "previewLimit": 50,
             "driver": "SQLite",
             "name": "dbup_test_sqlite",
-            "database": "${workspaceFolder:dbup_test}/bin/Debug/net6.0/dbup.db"
+            "database": "${workspaceFolder:dbup_test}/bin/Debug/net8.0/dbup.db"
         }
     ],
     "sqltools.useNodeRuntime": true

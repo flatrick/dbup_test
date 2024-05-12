@@ -3,11 +3,16 @@ theme: readthedocs
 repo_url: https://github.com/flatrick/dbup_test
 nav:
   - "Home": "index.md"
-  - "Tutorials": "tutorials.md"
-  - "How-to Guides": "how-to-guides.md"
-  - "Reference": "reference.md"
-  - "Explanation": "explanation.md"
-  - "Settings": "settings.md"  
+  - "Tutorials": 
+    - "Introduction": "tutorials.md"
+    - "SQLite": "tutorial_sqlite.md"
+  - "How-to Guides": 
+    - "Introduction": "how-to-guides.md"
+  - "Reference":
+    - "Introduction": "reference.md"
+    - "Settings": "settings.md"  
+  - "Explanation": 
+    - "Introduction": "explanation.md"
   - "SQL Scripts":
       - "Sources": "script_sources.md"
       - "Settings": "script_settings.md"

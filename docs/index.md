@@ -35,9 +35,9 @@ These scripts can be provided through a few different means:
 Each option has its pro's and con's, but atleast one of them should provide you with what you need.
 And you can also mix and match between the various options for the same product if needed.
 
-## Next step
+## Next steps
 
-- [Tutorials](tutorials.md)
-- [How-To](how-to-guides.md)
-- [Explanation](explanation.md)
-- [Reference](reference.md)
+1. [Tutorials](tutorials.md)
+1. [How-To](how-to-guides.md)
+1. [Explanation](explanation.md)
+1. [Reference](reference.md)

@@ -1,6 +1,10 @@
 {
     "recommendations": [
         "mtxr.sqltools-driver-pg",
-        "mtxr.sqltools"
+        "mtxr.sqltools",
+        "dorzey.vscode-sqlfluff",
+        "mikestead.dotenv",
+        "ms-dotnettools.csdevkit",
+        "mtxr.sqltools-driver-sqlite"
     ]
 }

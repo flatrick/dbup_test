@@ -2,6 +2,12 @@
 
 [Tutorials - Divio](https://docs.divio.com/documentation-system/tutorials/)
 
+- A tutorial is meant to teach the reader how to use something
+- **Puts all the emphasis on how to do something** *rather than why*
+- When taking the first steps to learning something new, it is important to get the reader to feel that first sense of success
+- Only after the reader knows how to do something, they'll be interested in knowing the nitty gritty details
+  - And they'll have some practical experience to actually connect that knowledge to
+
 ## New console application with DbUp and SQLite
 
 Before going into details on the various options available, let's begin by creating a simple console application and get you aquainted with DbUp:
@@ -126,6 +132,9 @@ dotnet add package Npgsql
 dotnet add package DbUp-Core
 dotnet add package DbUp-postgresql
 ```
+
+
+### Source code
 
 And below is the code. As you'll notice, there is no helper-method used here to setup the connection and no need for an using-statement.
 

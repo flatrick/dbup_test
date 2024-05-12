@@ -11,7 +11,7 @@ My goal is to follow the [ideas described by the Divio-team](https://documentati
 
 ![](https://documentation.divio.com/_images/overview.png)
 
-|               | [Tutorials](tutorials.md)          | [How-to guides](how-to_guides.md)    | [Reference](reference.md)         | [Explanation](explanation.md)         |
+|               | [Tutorials](tutorials.md)          | [How-to guides](how-to-guides.md)    | [Reference](reference.md)         | [Explanation](explanation.md)         |
 | ------------- | ---------------------------------- | ------------------------------------ | --------------------------------- | ------------------------------------- |
 | *oriented to* | Learning                           | A goal                               | Information                       | Understanding                         |
 | *must*        | Allow the newcomer to get started  | Show how to solve a specific problem | Describe the machinery            | Explain                               |
@@ -40,5 +40,5 @@ And you can also mix and match between the various options for the same product 
 
 - [Tutorials](tutorials.md)
 - [How-To](how-to-guides.md)
-- [Explanations](explanations.md)
+- [Explanation](explanation.md)
 - [Reference](reference.md)

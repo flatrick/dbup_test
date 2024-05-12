@@ -5,6 +5,20 @@ The [official docs](https://dbup.readthedocs.io/) have a few issues for a new us
 
 My goal is to follow the [ideas described by the Divio-team](https://documentation.divio.com/) on how to best write documentation.
 
+## Guidelines for the documentation
+
+- [The Grand Unified Theory of Documenation - David Laing](https://documentation.divio.com/)
+
+![](https://documentation.divio.com/_images/overview.png)
+
+|               | [Tutorials](tutorials.md)          | [How-to guides](how-to_guides.md)    | [Reference](reference.md)         | [Explanation](explanation.md)         |
+| ------------- | ---------------------------------- | ------------------------------------ | --------------------------------- | ------------------------------------- |
+| *oriented to* | Learning                           | A goal                               | Information                       | Understanding                         |
+| *must*        | Allow the newcomer to get started  | Show how to solve a specific problem | Describe the machinery            | Explain                               |
+| *its form*    | A lesson                           | A series of steps                    | Dry description                   | Discursive explanation                |
+| *analogy*     | Teaching a small child how to cook | A recipe in a cookery book           | A reference encyclopaedia article | An article on culinary social history |
+
+
 ## What is DbUp?
 
 DbUp is a tool for deploying database changes, it started its life supporting only Microsoft SQL Server, but has over time recieved support for other popular alternatives.

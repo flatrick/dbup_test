@@ -3,12 +3,11 @@ theme: readthedocs
 repo_url: https://github.com/flatrick/dbup_test
 nav:
   - "Home": "index.md"
-  - "Introduction": "introduction.md"
   - "Tutorials": "tutorials.md"
-  - "How-To": "how-to.md"
-  - "Explanations": "explanations.md"
+  - "How-to Guides": "how-to_guides.md"
   - "Reference": "reference.md"
+  - "Explanation": "explanation.md"
+  - "Settings": "settings.md"  
   - "SQL Scripts":
       - "Sources": "script_sources.md"
       - "Settings": "script_settings.md"
-  - "Settings": "settings.md"

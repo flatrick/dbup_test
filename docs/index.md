@@ -1,7 +1,9 @@
 # A better manual for DbUp?
 
-This is my attempt to describe how to use DbUp in a more thorough manner than the current official docs do.
-The [official docs](https://dbup.readthedocs.io/) have a few issues for a new user and the docs seems to have fallen out of date.
+This is my attempt to describe how to use DbUp in a more user friendly.
+The [official docs](https://dbup.readthedocs.io/) have a few issues for a new user and the docs seems to have fallen out of date as well.
+
+My goal is to follow the [ideas described by the Divio-team](https://documentation.divio.com/) on how to best write documentation.
 
 ## What is DbUp?
 
@@ -19,3 +21,11 @@ These scripts can be provided through a few different means:
 
 Each option has its pro's and con's, but atleast one of them should provide you with what you need.
 And you can also mix and match between the various options for the same product if needed.
+
+## Next step
+
+- [Introduction to DbUp](introduction.md)
+- [Tutorials](tutorials.md)
+- [How-To](how-to.md)
+- [Explanations](explanations.md)
+- [Reference](reference.md)

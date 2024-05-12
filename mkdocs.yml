@@ -4,6 +4,10 @@ repo_url: https://github.com/flatrick/dbup_test
 nav:
   - "Home": "index.md"
   - "Introduction": "introduction.md"
+  - "Tutorials": "tutorials.md"
+  - "How-To": "how-to.md"
+  - "Explanations": "explanations.md"
+  - "Reference": "reference.md"
   - "SQL Scripts":
       - "Sources": "script_sources.md"
       - "Settings": "script_settings.md"

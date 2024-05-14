@@ -97,4 +97,5 @@ CREATE TABLE 'EmployeeRoles' (
 
 ## Step 6: Build and run!
 
-Whenever you build and run this application, these two scripts will now be executed on the PostgreSQL-database.
+Whenever you build and run this application, DbUp will start by checking to see if the scripts it found have been run yet according to the journal-table that DbUp adds to the database.
+If any of them haven't been run yet, DbUp will execute those scripts now on the PostgreSQL-database.

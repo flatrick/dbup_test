@@ -100,3 +100,4 @@ CREATE TABLE 'EmployeeRoles' (
 ## Step 6: Build and run!
 
 Whenever you build and run this application, these two scripts will now be executed on the in-memory database.
+As the database is re-created in memory on every run, the scripts will always run, but for a database that is retained between start-ups of the application, DbUp will only execute the scripts it found that doesn't have an entry in DbUp's journal table.

@@ -77,12 +77,6 @@ namespace dbup_example
 }
 ```
 
-And now that we have done the preliminary work of setting everything up, we can start adding SQL-scripts to the `migrations` folder.
-
-By default, DbUp will begin by collecting a list of all scripts to execute, and then sort them using [StringComparer.Ordinal](https://docs.microsoft.com/en-us/dotnet/api/system.stringcomparer.ordinal?view=net-6.0) before executing them.
-In other words, the filenames of your scripts will dictate which order they are executed in.
-For this example, we'll use a date and time-string to sort them in the desired order of oldest to newest.
-
 ## Step 5: SQL scripts
 
 Create two files named `202206262000.sql` and `202206262100.sql` in the folder `migrations`:

@@ -31,7 +31,8 @@ Add the following somewhere between the `<Project>...</Project>` tags:
 
 ## Step 4: Source code
 
-And below is the code. As you'll notice, there is no helper-method used here to setup the connection and no need for an using-statement.
+Below is an example of a simple source code that connects to the PostgreSQL-database and runs the .sql-scripts found in the folder `migrations/`.
+*Take note that we aren't using any helper-methods like in the SQLite-example as the database is being handled by a separate process.*
 
 ```csharp
 using System;

@@ -97,4 +97,6 @@ CREATE TABLE 'EmployeeRoles' (
 );
 ```
 
+## Step 6: Build and run!
+
 Whenever you build and run this application, these two scripts will now be executed on the in-memory database.
